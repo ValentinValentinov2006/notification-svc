@@ -11,6 +11,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Slf4j
@@ -54,5 +55,9 @@ public class NotificationService {
 
 
         notificationRepository.save(notification);
+    }
+
+    public List<Notification> getAllNotifications() {
+        return notificationRepository.findAll();
     }
 }
